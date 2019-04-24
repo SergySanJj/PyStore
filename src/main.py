@@ -2,6 +2,6 @@ import store
 
 
 if __name__ == "__main__":
-    rootdir = r'C:\SemiData\0_MAIN_0\cat2d\NEWSTUSSY'
+    rootdir = r'/media'
 
-    store.compressSubdirs(rootdir)
+    store.compressSubdirs(rootdir,copyUncompressable=False)

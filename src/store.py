@@ -19,7 +19,7 @@ def isImage(file):
     return False
 
 
-def compressSubdirs(rootDirectory):
+def compressSubdirs(rootDirectory, copyUncompressable=True):
     print('*** Compression Started ***')
     totalFileCount = 0
     totalFileCompressedCount = 0
@@ -36,7 +36,7 @@ def compressSubdirs(rootDirectory):
                 compress(os.path.join(subdir, file),
                          compressed_dir + file)
                 totalFileCompressedCount += 1
-            else:
+            elif copyUncompressable:
                 shutil.copy(os.path.join(subdir, file), compressed_dir + file)
 
     print('Total files compressed/handled: ' +
